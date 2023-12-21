@@ -1,0 +1,9 @@
+.wrapper {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 1230px;
+
+  @media (max-width: map-get($breakpoints, 'lg')) {
+    padding: 0 10px;
+  }
+}
