@@ -36,6 +36,7 @@
     ]
   },
   "devDependencies": {
+    "classnames": "^2.5.1",
     "node-sass": "^9.0.0",
     "sass": "^1.69.5"
   }
