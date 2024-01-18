@@ -1,0 +1,25 @@
+.counter {
+  display: flex;
+  align-items: stretch;
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 57px;
+    height: 57px;
+    // background-color: $soft-red;
+    font-family: "Montserrat";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  &__input {
+    display: flex;
+    height: 100%;
+  }
+}

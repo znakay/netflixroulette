@@ -1,0 +1,124 @@
+.genre-select {
+  $self: &;
+  position: relative;
+
+  &__field {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 18px 15px;
+    width: 100%;
+    background-color: rgba(#323232, 0.95);
+    border-radius: 4px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #fff;
+    cursor: pointer;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 9px solid #f65261;
+      border-radius: 2px;
+      transition: transform 0.5s ease-out;
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    transform: translateY(-40%);
+    width: 100%;
+    padding: 12px 18px;
+    border-radius: 4px;
+    background-color: rgba(#232323, 0.92);
+    box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.1),
+      0px 10px 20px 0px rgba(0, 0, 0, 0.1), 0px 2px 10px 0px rgba(0, 0, 0, 0.1),
+      0px 0px 2px 0px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(13.591408729553223px);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out,
+      visibility 0.5s ease-out;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    list-style-type: none;
+  }
+
+  &__item {
+    width: fit-content;
+    color: #fff;
+    font-family: "Montserrat";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    input {
+      display: none;
+    }
+
+    label {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      text-transform: capitalize;
+      cursor: pointer;
+
+      &::before {
+        content: "";
+        display: block;
+        width: 16px;
+        height: 16px;
+        background-color: #fff;
+        border-radius: 2px;
+        border: 1px solid #e6e8ed;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(5px, -65%) rotate(45deg);
+        width: 4px;
+        height: 9px;
+        border-right: 3px solid #fff;
+        border-bottom: 3px solid #fff;
+      }
+    }
+
+    input:checked + label::before {
+      background-color: #e44c5a;
+      border-color: #e44c5a;
+    }
+  }
+
+  &_active {
+    #{$self}__field::after {
+      transform: rotate(180deg);
+    }
+
+    #{$self}__dropdown {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
