@@ -39,13 +39,14 @@ class Counter extends React.Component {
     const counterInput = React.createElement("input", {
       className: "counter__input",
       value: this.state.count,
+      readOnly: true,
     });
 
-    return React.createElement("div", { className: "counter" }, [
+    return React.createElement("div", { className: "counter" }, 
       counterDecrement,
       counterInput,
       counterIncrement,
-    ]);
+    );
   };
 
   render() {

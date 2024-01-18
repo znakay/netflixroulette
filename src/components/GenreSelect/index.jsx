@@ -39,7 +39,7 @@ class GenreSelect extends React.Component {
                   key={g}
                   onClick={this.props.onSelect}
                 >
-                  <input type="checkbox" value={g} id={g} checked={checked}/>
+                  <input type="checkbox" value={g} id={g} checked={checked} readOnly={true}/>
                   <label htmlFor={g}>{g}</label>
                 </li>
               );
